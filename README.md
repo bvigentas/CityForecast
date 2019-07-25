@@ -8,3 +8,6 @@
 | Intellij                                         | 2018.3.4            |
 | React                                            | 11.3                |
 | Spring                                           |                     |
+| Git                                              |                     |
+| Insomnia                                         |                     |
+          
