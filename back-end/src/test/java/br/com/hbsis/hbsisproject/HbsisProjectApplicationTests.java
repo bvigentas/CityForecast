@@ -1,4 +1,4 @@
-package br.com.brunovigentas.hbsisproject;
+package br.com.hbsis.hbsisproject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

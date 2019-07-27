@@ -1,4 +1,4 @@
-package br.com.brunovigentas.hbsisproject;
+package br.com.hbsis.hbsisproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
