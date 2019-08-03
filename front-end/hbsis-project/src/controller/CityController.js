@@ -4,36 +4,46 @@ import $ from 'jquery';
 export default class ForecastController {
 
     getCities() {
+        let callResult = [];
         $.ajax({
-            url: 'localhost:8080/city/cities',
+            url: 'http://localhost:8080/city/cities',
             contentType: 'application/json',
             dataType: 'json',
+            async: false,
+            timeout: 30000,
             type: 'get',
             success: result => {
                 console.log('Cities request successfully');
-                return result;
+                callResult = result;
             },
             error: result => {
                 if (result.status === 400) {
-                    
+                    callResult = result
                 }
             }
-        })
+        });
+
+        return callResult;
     }
 
     setCity(name) {
+        let callResult = [];
         $.ajax({
-            url: 'localhost:8080/city',
+            url: 'http://localhost:8080/city',
             contentType: 'application/json',
             dataType: 'json',
+            async: false,
+            timeout: 30000,
             type: 'post',
             data: JSON.stringify({name: name}),
-            success: () => {
-                return true;
+            success: result => {
+                callResult = result;
             },
             error : result => {
-                return result;
+                callResult = result;
             }
         });
+
+        return callResult;
     }
 }

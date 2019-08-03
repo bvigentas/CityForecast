@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './css/sb-admin-2.min.css';
 import 'bootstrap';
+import './css/custom.css';
 import './css/dataTables.bootstrap4.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -15,7 +16,7 @@ ReactDOM.render(
     <BrowserRouter>
         <App>
             <Switch>
-                <Route exact path="/forecast" component={Home}/>
+                <Route exact path="/" component={Home}/>
                 <Route path="/new_city" component={CityRegistration}/>
             </Switch>
         </App>

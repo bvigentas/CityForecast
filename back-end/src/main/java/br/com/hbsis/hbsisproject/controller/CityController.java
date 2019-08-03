@@ -23,16 +23,19 @@ public class CityController {
     private CityRepository repository;
     private Gson gson = new Gson();
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{name}")
     public City getCity(@PathVariable String name) {
         return repository.findCityByName(name);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/cities")
     public List<City> getCities() {
         return repository.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping()
     public City postCity(@Validated @RequestBody City city) {
         city.setId(ObjectId.get());
@@ -47,6 +50,7 @@ public class CityController {
         return city;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/{id}")
     public Map<String, Boolean> deleteCity(@PathVariable ObjectId id) {
         City city = repository.findCityById(id);
@@ -57,6 +61,7 @@ public class CityController {
         return result;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("{id}")
     public City updateCity(@PathVariable ObjectId id, @Validated @RequestBody City city) {
         City currentCity = repository.findCityById(id);

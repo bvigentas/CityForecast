@@ -18,15 +18,15 @@ class App extends Component {
           <div class="sidebar-heading">
             City
           </div>
-          <li class="nav-item">
+          <li class="nav-item menu-link">
             <a class="nav-link" href="charts.html">
               <i class="fas fa-fw fa-chart-area"></i>
               <span><Link to="/new_city">New City</Link></span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item menu-link">
             <a class="nav-link" href="charts.html">
               <i class="fas fa-fw fa-chart-area"></i>
-              <span><Link to="/forecast">Forecast</Link></span></a>
+              <span><Link to="/">Forecast</Link></span></a>
           </li>
         </ul>
 

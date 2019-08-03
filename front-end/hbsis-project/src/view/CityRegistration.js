@@ -7,10 +7,17 @@ export default class Home extends Component{
         super();
         this.state = {name: ''};
         this.sendForm = this.sendForm.bind(this);
+        this.saveChanges = this.saveChanges.bind(this);
     }
 
     setName(event) {
         this.setState({name: event.target.value});
+    }
+
+    saveChanges(field, event) {
+        let fieldChanged = [];
+        fieldChanged[field] = event.target.value;
+        this.setState(fieldChanged);
     }
 
     async sendForm(event) {
@@ -31,7 +38,7 @@ export default class Home extends Component{
             <form onSubmit={this.sendForm} method="post">
                 <div class="form-group">
                     <label for="city">City name</label>
-                    <input type="text" class="form-control" id="city" aria-describedby="cityHelp" placeholder="Enter city name" value={this.state.name}/>
+                    <input type="text" class="form-control" onChange={this.saveChanges.bind(this,"name")} id="city" aria-describedby="cityHelp" placeholder="Enter city name" value={this.state.name}/>
                     <small id="cityHelp" class="form-text text-muted">Only cities present in Open Weather API will be allowed.</small>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

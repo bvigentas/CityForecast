@@ -1,22 +1,26 @@
 import $ from 'jquery';
 
 
-export class ForecastController {
+export default class ForecastController {
 
-    getForecast() {
+    getForecast(cityName) {
+        let callResult = [];
         $.ajax({
-            url: '',
-            contentType: 'application/json',
-            dataType: 'json',
+            url: `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=5&units=metric&APPID=eb8b1a9405e659b2ffc78f0a520b1a46`,
+            async: false,
+            timeout: 30000,
             type: 'get',
-            success: () => {
+            success: result => {
                 console.log('Forecast request successfully');
+                callResult = result;
             },
             error: result => {
                 if (result.status === 400) {
-                    
+                    callResult = result;
                 }
             }
-        })
+        });
+
+        return callResult;
     }
 }

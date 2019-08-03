@@ -1,0 +1,19 @@
+.menu-link a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+.menu-link a :visited {
+    color: white;
+  }
+  
+/* mouse over link */
+.menu-link a:hover {
+color: #f0f0f0;
+}
+
+/* selected link */
+.menu-link a:active {
+color: gray;
+}
