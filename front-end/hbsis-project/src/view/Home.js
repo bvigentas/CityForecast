@@ -1,6 +1,20 @@
 import React,{ Component } from 'react';
+import CityController from '../controller/CityController';
 
 export default class Home extends Component {
+
+    constructor() {
+        super();
+        this.state = {lista: []};
+        this.updateList = this.updateList.bind(this);
+    }
+
+    componentDidMount() {
+        const cityController = new CityController();
+        const result =cityController.getCities();
+        this.setState({lista: result});
+    }
+
     render() {
         return (
             
@@ -24,27 +38,15 @@ export default class Home extends Component {
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr>
-                                    <td>Tiger Nixon</td>
-                                    </tr>
-                                    <tr>
-                                    <td>Garrett Winters</td>
-                                    </tr>
-                                    <tr>
-                                    <td>Ashton Cox</td>
-                                    </tr>
-                                    <tr>
-                                    <td>Cedric Kelly</td>
-                                    </tr>
-                                    <tr>
-                                    <td>Airi Satou</td>
-                                    </tr>
-                                    <tr>
-                                    <td>Brielle Williamson</td>
-                                    </tr>
-                                    <tr>
-                                    <td>Herrod Chandler</td>
-                                    </tr>
+                                    {
+                                    this.props.lista.map((city) => {
+                                        return (
+                                        <tr key={city.id}>
+                                            <td>{city.name}</td>
+                                        </tr>
+                                        );
+                                    })
+                                    }
                                 </tbody>
                                 </table>
                             </div>

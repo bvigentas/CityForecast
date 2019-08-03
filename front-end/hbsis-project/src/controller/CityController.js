@@ -9,8 +9,9 @@ export default class ForecastController {
             contentType: 'application/json',
             dataType: 'json',
             type: 'get',
-            success: () => {
+            success: result => {
                 console.log('Cities request successfully');
+                return result;
             },
             error: result => {
                 if (result.status === 400) {
