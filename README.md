@@ -47,6 +47,9 @@ Com o git clone já realizado, importe o projeto back-end para alguma IDE como u
 
 Com isso o back-end deve subir em **localhost:8080**. Caso ele subir em outra porta, algumas configurações no front-end terão de ser alteradas.
 
+Como importar gradle project no Intellij(Recomendado): https://spring.io/guides/gs/intellij-idea/
+Como importar gradle project no eclipse: https://steffenschaefer.github.io/gwt-gradle-plugin/doc/latest/eclipse
+
 ## Configurações caso o back-end ou front-end tenham subido em portas diferentes.
 
 ### Back-end:
