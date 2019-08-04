@@ -28,17 +28,18 @@ export default class Home extends Component {
         
         const cityController = new CityController();
         const result = cityController.getCities();
-        this.setState({lista: result});
-
+        
         PubSub.subscribe('show-forecast', (topic,cityName) => {
             this.showForecast(cityName);
         });
-
-
+        
+        
         if (result[0] && result[0].id) {
             PubSub.publish('show-alert', {alertMessage: '', styleClass: '', isAlertVisible: false});
+            this.setState({lista: result});
         } else if (result.responseJSON) {
             PubSub.publish('show-alert', {alertMessage: result.responseJSON.message, styleClass: 'alert alert-danger alert-dismissible fade show', isAlertVisible: true});
+            this.setState({lista: []});
         }
     }
 
