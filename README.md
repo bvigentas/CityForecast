@@ -8,6 +8,7 @@
 | MongoDB                                          | 4.0.10              |
 | Gradle                                           | 5.4.1               |
 | Intellij                                         | 2019.1              |
+| VSCode                                           | 1.35.1              |
 | Node                                             | 10.16.0             |
 | Npm                                              | 6.9.0               |
 | React                                            | 16.8.6              |
