@@ -21,6 +21,10 @@
 ## Configurações necessárias Banco de dados MongoDB.
 
 Com o MongoDB instalado em sua máquina, abra um **CMD** e execute o comando **mongod** para iniciar o mongo. Deixe este CMD aberto enquanto a aplicação é executada.
+OBS: Certifique-se de que você possui o seguinte caminho **C:\data\db** criado. Ou então inicio o **mongod** informando onde o banco será criado.
+```mongodb
+ mongod --dbpath <caminho>
+ ```
 Abra outro **CMD**, digite **mongo** para utilizar o mongo e insira o seguinte comando:
  ```mongodb
  use cities
