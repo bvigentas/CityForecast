@@ -36,7 +36,7 @@ export default class Home extends Component {
 
 
         if (result[0] && result[0].id) {
-            PubSub.publish('show-alert', {alertMessage: `${result.name} successfully registred!`, styleClass: 'alert alert-success alert-dismissible fade show', isAlertVisible: true});
+            PubSub.publish('show-alert', {alertMessage: '', styleClass: '', isAlertVisible: false});
         } else if (result.responseJSON) {
             PubSub.publish('show-alert', {alertMessage: result.responseJSON.message, styleClass: 'alert alert-danger alert-dismissible fade show', isAlertVisible: true});
         }
