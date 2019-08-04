@@ -3,10 +3,14 @@ import $ from 'jquery';
 
 export default class ForecastController {
 
+    constructor() {
+        this.state = {uriBackEnd: 'http://localhost:8080'};
+    }
+
     getCities() {
         let callResult = [];
         $.ajax({
-            url: 'http://localhost:8080/city/cities',
+            url: `${this.state.uriBackEnd}/city/cities`,
             contentType: 'application/json',
             dataType: 'json',
             async: false,
@@ -29,7 +33,7 @@ export default class ForecastController {
     setCity(name) {
         let callResult = [];
         $.ajax({
-            url: 'http://localhost:8080/city',
+            url: `${this.state.uriBackEnd}/city`,
             contentType: 'application/json',
             dataType: 'json',
             async: false,
