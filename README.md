@@ -8,6 +8,7 @@
 | MongoDB                                          | 4.0.10              |
 | Gradle                                           | 5.4.1               |
 | Intellij                                         | 2019.1              |
+| VSCode                                           | 1.35.1              |
 | Node                                             | 10.16.0             |
 | Npm                                              | 6.9.0               |
 | React                                            | 16.8.6              |
@@ -42,7 +43,7 @@ Após ter realizado o git clone do projeto, vá até a pasta **..\HBSIS\CityTime
 
 ## Configurações necessárias para subir o back-end
 
-Com o git clone já realizado, importe o projeto back-end para alguma IDE, preferencialmente Intellij. Com o projeto já na IDE, configure as informações para se connectar ao mongodb no arquivo **application.properties**. Feito isso, de um build no projeto. Tendo feito o build, de um RUN na classe **HbsisProjectApplication.java**.
+Com o git clone já realizado, importe o projeto back-end para alguma IDE como um **gradle project**, preferencialmente Intellij. Com o projeto já na IDE, configure as informações para se connectar ao mongodb no arquivo **application.properties**. Feito isso, de um build no projeto. Tendo feito o build, de um RUN na classe **HbsisProjectApplication.java**.
 
 Com isso o back-end deve subir em **localhost:8080**. Caso ele subir em outra porta, algumas configurações no front-end terão de ser alteradas.
 
