@@ -2,6 +2,7 @@ package br.com.hbsis.hbsisproject.controller;
 
 import br.com.hbsis.hbsisproject.model.City;
 import br.com.hbsis.hbsisproject.repository.CityRepository;
+import br.com.hbsis.hbsisproject.response.CityAlreadyRegistedException;
 import br.com.hbsis.hbsisproject.response.CityNotFoundException;
 import br.com.hbsis.hbsisproject.response.NoCitiesFoundException;
 import br.com.hbsis.hbsisproject.util.PropertyProvider;
@@ -49,6 +50,10 @@ public class CityController {
     @CrossOrigin(origins = uriFrontend)
     @PostMapping()
     public City postCity(@Validated @RequestBody City city) {
+        City cityFindIndataBase = repository.findCityByName(city.getName());
+        if (cityFindIndataBase != null) {
+            throw new CityAlreadyRegistedException();
+        }
         city.setId(ObjectId.get());
         WeatherAPI weatherAPI = new WeatherAPI();
         String cityWeatherData = weatherAPI.getForecast(city.getName());

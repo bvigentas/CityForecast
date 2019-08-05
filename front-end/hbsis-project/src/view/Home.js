@@ -40,6 +40,9 @@ export default class Home extends Component {
         } else if (result.responseJSON) {
             PubSub.publish('show-alert', {alertMessage: result.responseJSON.message, styleClass: 'alert alert-danger alert-dismissible fade show', isAlertVisible: true});
             this.setState({lista: []});
+        } else if (result.statusText) {
+            PubSub.publish('show-alert', {alertMessage: result.statusText, styleClass: 'alert alert-danger alert-dismissible fade show', isAlertVisible: true});
+            this.setState({lista: []});
         }
     }
 

@@ -2,13 +2,13 @@ version: '3'
 services:
   front-end:
     build:
-      context: ./front-end/hbsis-project
-      dockerfile: ./front-end/hbsis-project/Dockerfile
+      context: front-end/hbsis-project
+      dockerfile: front-end/hbsis-project/Dockerfile
     networks:
       - production-network
     hostname: front-end
     container_name: front-end
-    port:
+    ports:
       - 3000:3000
   back-end:
     build:
@@ -18,9 +18,10 @@ services:
       - production-network
     hostname: back-end
     container_name: back-end
-    port: 
+    ports: 
       - 8080
-    depends_on: mongodb
+    depends_on: 
+      - mongodb
   mongodb:
     image: mongo:latest
     ports: 
@@ -29,6 +30,6 @@ services:
       - production-network
     hostname: mongo
     container_name: mongo
-  networks:
-    production-network:
-      driver: bridge
+networks:
+  production-network:
+    driver: bridge

@@ -21,9 +21,7 @@ export default class ForecastController {
                 callResult = result;
             },
             error: result => {
-                if (result.status === 400) {
-                    callResult = result
-                }
+                callResult = result
             }
         });
 
