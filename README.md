@@ -73,3 +73,4 @@ Procure pela classe **CityController.java** e altere o valor da constante **uriF
  ```java
     private static final String uriFrontend = "http://localhost:3000";
  ```
+CorsFilter implements Filter. doFilter (servletrequest servletresponse filterchain - response.setheader joga o cors para ca
